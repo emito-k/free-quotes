@@ -1,5 +1,5 @@
 const express = require("express");
-const fetch = require("node-fetch");
+const axios = require("axios");
 const cors = require("cors");
 
 const app = express();
@@ -13,22 +13,19 @@ app.get("/", async (req, res) => {
       Accept: "application/json",
     };
 
-    const response = await fetch(
+    const response = await axios.get(
       "https://api.forismatic.com/api/1.0/?method=getQuote&format=json&lang=en",
-      {
-        method: "GET",
-        headers: headersList,
-      }
+      { headers: headersList }
     );
 
-    const data = await response.json();
+    const data = response.data;
     console.log(data);
 
-    // Return the response from Forismatic to the client
-    res.send(data);
+    // return json data
+    res.status(200).json(data);
   } catch (error) {
     console.error(error);
-    res.status(500).send({ error: "Internal Server Error" });
+    res.status(500).json({ error: "Internal Server Error" });
   }
 });
 
