@@ -1,0 +1,29 @@
+{
+  "name": "free-qoutes",
+  "version": "1.0.0",
+  "description": "This just calls the api.forismatic.com api and returns that, this is to resolve an api cors error on my react app",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/emito-k/free-quotes.git"
+  },
+  "keywords": [
+    "free",
+    "quotes"
+  ],
+  "author": "me",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/emito-k/free-quotes/issues"
+  },
+  "homepage": "https://github.com/emito-k/free-quotes#readme",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^4.18.2",
+    "fetch": "^1.1.0"
+  }
+}
